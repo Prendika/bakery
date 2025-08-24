@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delicious Bakery - Toko Roti Terbaik</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        .whatsapp-float:hover {
+            background-color: #128C7E;
+            transform: scale(1.1);
+        }
+        
+        .menu-item:hover .menu-img {
+            transform: scale(1.05);
+        }
+        .menu-img {
+            transition: transform 0.3s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease forwards;
+        }
+    </style>
+</head>
+<body class="bg-amber-50 font-sans">
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/6285236536101?text=Halo%20Delicious%20Bakery,%20saya%20ingin%20memesan%20roti" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Header/Navbar -->
+    <header class="bg-amber-800 text-white sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-bread-slice text-2xl"></i>
+                <h1 class="text-2xl font-bold">Delicious Bakery</h1>
+            </div>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="hover:text-amber-200 transition">Home</a>
+                <a href="#about" class="hover:text-amber-200 transition">Tentang Kami</a>
+                <a href="#menu" class="hover:text-amber-200 transition">Menu</a>
+                <a href="#contact" class="hover:text-amber-200 transition">Kontak</a>
+            </nav>
+            
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-white focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-amber-700 px-4 pb-4">
+            <a href="#home" class="block py-2 hover:text-amber-200 transition">Home</a>
+            <a href="#about" class="block py-2 hover:text-amber-200 transition">Tentang Kami</a>
+            <a href="#menu" class="block py-2 hover:text-amber-200 transition">Menu</a>
+            <a href="#contact" class="block py-2 hover:text-amber-200 transition">Kontak</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center bg-amber-900 text-white overflow-hidden">
+        <div class="absolute inset-0 bg-black opacity-40"></div>
+        <img src="https://images.unsplash.com/photo-1608190003443-86a8a3e80d4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+             alt="Bakery Background" class="absolute inset-0 w-full h-full object-cover">
+        
+        <div class="container mx-auto px-4 z-10 text-center animate-fade-in">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Roti Segar Setiap Hari</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">Dibuat dengan bahan premium dan penuh cinta untuk memenuhi selera Anda</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#menu" class="bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-6 rounded-full transition duration-300 transform hover:scale-105">
+                    Lihat Menu
+                </a>
+                <a href="https://wa.me/6285236536101?text=Halo%20Delicious%20Bakery,%20saya%20ingin%20memesan%20roti" 
+                   class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-full transition duration-300 transform hover:scale-105">
+                    Pesan via WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-amber-800 mb-4">Tentang Kami</h2>
+                <div class="w-24 h-1 bg-amber-600 mx-auto"></div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" 
+                         alt="Bakery Interior" class="rounded-lg shadow-xl w-full h-auto">
+                </div>
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-bold text-amber-800 mb-4">Delicious Bakery - Sejak 2010</h3>
+                    <p class="text-gray-700 mb-4">
+                        Delicious Bakery didirikan dengan misi untuk menyajikan roti berkualitas tinggi dengan cita rasa yang konsisten. 
+                        Kami menggunakan bahan-bahan terbaik dan teknik pembuatan roti tradisional yang dipadukan dengan inovasi modern.
+                    </p>
+                    <p class="text-gray-700 mb-6">
+                        Setiap produk kami dibuat dengan penuh dedikasi dan perhatian terhadap detail. Kami percaya bahwa roti yang baik 
+                        tidak hanya enak, tetapi juga harus sehat dan bergizi untuk keluarga Anda.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-amber-600 mr-2 text-xl"></i>
+                            <span>Bahan Premium</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-amber-600 mr-2 text-xl"></i>
+                            <span>Tanpa Pengawet</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-amber-600 mr-2 text-xl"></i>
+                            <span>Pembuatan Harian</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-amber-600 mr-2 text-xl"></i>
+                            <span>Resep Rahasia</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-16 bg-amber-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-amber-800 mb-4">Menu Kami</h2>
+                <div class="w-24 h-1 bg-amber-600 mx-auto"></div>
+                <p class="text-gray-700 mt-4 max-w-2xl mx-auto">Nikmati berbagai pilihan roti segar yang dibuat setiap hari</p>
+            </div>
+            
+            <!-- Menu Filter -->
+            <div class="flex justify-center mb-8">
+                <div class="inline-flex rounded-md shadow-sm" role="group">
+                    <button type="button" class="px-4 py-2 text-sm font-medium rounded-l-lg bg-amber-600 text-white focus:outline-none category-btn" data-category="all">
+                        Semua
+                    </button>
+                    <button type="button" class="px-4 py-2 text-sm font-medium bg-white text-amber-800 hover:bg-amber-100 focus:outline-none category-btn" data-category="bread">
+                        Roti Tawar
+                    </button>
+                    <button type="button" class="px-4 py-2 text-sm font-medium bg-white text-amber-800 hover:bg-amber-100 focus:outline-none category-btn" data-category="pastry">
+                        Pastry
+                    </button>
+                    <button type="button" class="px-4 py-2 text-sm font-medium bg-white text-amber-800 hover:bg-amber-100 focus:outline-none category-btn" data-category="cake">
+                        Kue
+                    </button>
+                    <button type="button" class="px-4 py-2 text-sm font-medium rounded-r-lg bg-white text-amber-800 hover:bg-amber-100 focus:outline-none category-btn" data-category="special">
+                        Spesial
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Menu Items -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="menu-container">
+                <!-- Item 1 -->
+                <div class="menu-item bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-xl" data-category="bread">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                             alt="Roti Tawar Premium" class="menu-img w-full h-full object-cover">
+                        <div class="absolute top-2 right-2 bg-amber-600 text-white text-xs font-bold px-2 py-1 rounded">
+                            Roti Tawar
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-amber-800 mb-2">Roti Tawar Premium</h3>
+                        <p class="text-gray-600 mb-4">Roti tawar lembut dengan tekstur sempurna, dibuat dari tepung terigu berkualitas tinggi.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xl font-bold text-amber-700">Rp 25.000</span>
+                            <button class="order-btn bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-full transition duration-300" 
+                                    data-name="Roti Tawar Premium" data-price="25000">
+                                Pesan Sekarang
+                            </button>
+                        </div>
+                    </div>
+                </div>
+               <!-- Item 1.1 --> 
+                <div class="menu-item bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-xl" data-category="bread">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="asset/roti pisang.webp"
+                             alt="Roti Tawar Premium" class="menu-img w-full h-full object-cover">
+                        <div class="absolute top-2 right-2 bg-amber-600 text-white text-xs font-bold px-2 py-1 rounded">
+                            Roti Tawar
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-amber-800 mb-2">Roti Pisang Premium</h3>
+                        <p class="text-gray-600 mb-4">Roti Pisang lembut dengan tekstur sempurna, dibuat dari tepung terigu berkualitas tinggi.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xl font-bold text-amber-700">Rp 10.000</span>
+                            <button class="order-btn bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-full transition duration-300" 
+                                    data-name="Roti Pisang Premium" data-price="10000">
+                                Pesan Sekarang
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Item 2 -->
+                <div class="menu-item bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-xl" data-category="pastry">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="asset/gandum.jpg"
+                             alt="Croissant" class="menu-img w-full h-full object-cover">
+                        <div class="absolute top-2 right-2 bg-amber-600 text-white text-xs font-bold px-2 py-1 rounded">
+                            Pastry
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-amber-800 mb-2">Gandum Original</h3>
+                        <p class="text-gray-600 mb-4">Roti Gandum dengan lapisan bermentega yang renyah di luar dan lembut di dalam.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xl font-bold text-amber-700">Rp 18.000</span>
+                            <button class="order-btn bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-full transition duration-300" 
+                                    data-name="Roti Gandum" data-price="18000">
+                                Pesan Sekarang
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 2.1 -->
+                <div class="menu-item bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-xl" data-category="pastry">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="asset/roti sobek.jpg"
+                             alt="Croissant" class="menu-img w-full h-full object-cover">
+                        <div class="absolute top-2 right-2 bg-amber-600 text-white text-xs font-bold px-2 py-1 rounded">
+                            Pastry
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-amber-800 mb-2">Roti Sobek Original</h3>
+                        <p class="text-gray-600 mb-4">Roti Sobek dengan lapisan bermentega yang renyah di luar dan lembut di dalam.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xl font-bold text-amber-700">Rp 20.000</span>
+                            <button class="order-btn bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-full transition duration-300" 
+                                    data-name="Roti Sobek" data-price="20000">
+                                Pesan Sekarang
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Item 3 -->
+                <div class="menu-item bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-xl" data-category="cake">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2089&q=80" 
+                             alt="Red Velvet Cake" class="menu-img w-full h-full object-cover">
+                        <div class="absolute top-2 right-2 bg-amber-600 text-white text-xs font-bold px-2 py-1 rounded">
+                            Kue
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-amber-800 mb-2">Red Velvet Cake</h3>
+                        <p class="text-gray-600 mb-4">Kue lembut dengan rasa coklat ringan dan cream cheese frosting yang nikmat.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xl font-bold text-amber-700">Rp 120.000</span>
+                            <button class="order-btn bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-full transition duration-300" 
+                                    data-name="Red Velvet Cake" data-price="120000">
+                                Pesan Sekarang
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 3.1 -->
+                <div class="menu-item bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-xl" data-category="cake">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="asset/black forest.jpg"
+                             alt="Black Forest Cake" class="menu-img w-full h-full object-cover">
+                        <div class="absolute top-2 right-2 bg-amber-600 text-white text-xs font-bold px-2 py-1 rounded">
+                            Kue
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-amber-800 mb-2">Black Forest Cake</h3>
+                        <p class="text-gray-600 mb-4">Kue lembut dengan rasa coklat ringan dan cream cheese frosting yang nikmat.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xl font-bold text-amber-700">Rp 150.000</span>
+                            <button class="order-btn bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-full transition duration-300" 
+                                    data-name="Black Forest Cake" data-price="150000">
+                                Pesan Sekarang
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Item 3.2 -->
+                <div class="menu-item bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-xl" data-category="cake">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="asset/cake coklat.png"
+                             alt="Black Forest Cake" class="menu-img w-full h-full object-cover">
+                        <div class="absolute top-2 right-2 bg-amber-600 text-white text-xs font-bold px-2 py-1 rounded">
+                            Kue
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-amber-800 mb-2">Coklat Cake</h3>
+                        <p class="text-gray-600 mb-4">Kue lembut dengan rasa coklat ringan dan cream cheese frosting yang nikmat.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xl font-bold text-amber-700">Rp 200.000</span>
+                            <button class="order-btn bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-full transition duration-300" 
+                                    data-name="Coklat Cake" data-price="200000">
+                                Pesan Sekarang
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <!-- Item 4 -->
+                <div class="menu-item bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-xl" data-category="bread">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="asset/kromboloni.jpeg"
+                             alt="Roti Gandum" class="menu-img w-full h-full object-cover">
+                        <div class="absolute top-2 right-2 bg-amber-600 text-white text-xs font-bold px-2 py-1 rounded">
+                            Roti Tawar
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-amber-800 mb-2">Roti Kromboloni Sehat</h3>
+                        <p class="text-gray-600 mb-4">Roti Kromboloni utuh kaya serat dengan rasa gurih alami, cocok untuk diet sehat.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xl font-bold text-amber-700">Rp 30.000</span>
+                            <button class="order-btn bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-full transition duration-300" 
+                                    data-name="Roti Kromboloni" data-price="30000">
+                                Pesan Sekarang
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Item 5 -->
+                <div class="menu-item bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-xl" data-category="pastry">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1627834377411-8da5f4f09de8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2081&q=80" 
+                             alt="Danish Pastry" class="menu-img w-full h-full object-cover">
+                        <div class="absolute top-2 right-2 bg-amber-600 text-white text-xs font-bold px-2 py-1 rounded">
+                            Pastry
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-amber-800 mb-2">Danish Pastry</h3>
+                        <p class="text-gray-600 mb-4">Pastry berlapis dengan isian selai buah atau keju, renyah dan lembut.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xl font-bold text-amber-700">Rp 22.000</span>
+                            <button class="order-btn bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-full transition duration-300" 
+                                    data-name="Danish Pastry" data-price="22000">
+                                Pesan Sekarang
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Item 6 -->
+                <div class="menu-item bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-xl" data-category="special">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1603532648955-039310d9ed75?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" 
+                             alt="Roti Khusus Hari Raya" class="menu-img w-full h-full object-cover">
+                        <div class="absolute top-2 right-2 bg-amber-600 text-white text-xs font-bold px-2 py-1 rounded">
+                            Spesial
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-amber-800 mb-2">Roti Khusus Hari Raya</h3>
+                        <p class="text-gray-600 mb-4">Roti spesial dengan campuran rempah-rempah pilihan, hanya tersedia saat hari raya.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xl font-bold text-amber-700">Rp 45.000</span>
+                            <button class="order-btn bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-full transition duration-300" 
+                                    data-name="Roti Khusus Hari Raya" data-price="45000">
+                                Pesan Sekarang
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Item 6.1 -->
+                <div class="menu-item bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-xl" data-category="special">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="asset/roti korea.jpg"
+                             alt="Roti Gulung" class="menu-img w-full h-full object-cover">
+                        <div class="absolute top-2 right-2 bg-amber-600 text-white text-xs font-bold px-2 py-1 rounded">
+                            Spesial
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-amber-800 mb-2">Roti Korea</h3>
+                        <p class="text-gray-600 mb-4">Roti spesial dengan campuran rempah-rempah pilihan, hanya tersedia saat hari raya.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xl font-bold text-amber-700">Rp 35.000</span>
+                            <button class="order-btn bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-full transition duration-300" 
+                                    data-name="Roti Korea" data-price="35000">
+                                Pesan Sekarang
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Item 6.2 -->
+                <div class="menu-item bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-xl" data-category="special">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="asset/roti bolu.jpg"
+                             alt="Roti Bolu" class="menu-img w-full h-full object-cover">
+                        <div class="absolute top-2 right-2 bg-amber-600 text-white text-xs font-bold px-2 py-1 rounded">
+                            Spesial
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-amber-800 mb-2">Roti Bolu</h3>
+                        <p class="text-gray-600 mb-4">Roti spesial dengan campuran rempah-rempah pilihan, hanya tersedia saat hari raya.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xl font-bold text-amber-700">Rp 50.000</span>
+                            <button class="order-btn bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-full transition duration-300" 
+                                    data-name="Roti Bolu" data-price="50000">
+                                Pesan Sekarang
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-amber-800 text-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Hubungi Kami</h2>
+                <div class="w-24 h-1 bg-amber-200 mx-auto"></div>
+                <p class="mt-4 max-w-2xl mx-auto">Kami siap melayani kebutuhan roti Anda setiap hari</p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row gap-8">
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-bold mb-4">Informasi Kontak</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-amber-200 mt-1 mr-3 text-xl"></i>
+                            <div>
+                                <h4 class="font-bold">Alamat</h4>
+                                <p>Jl. Roti Enak No. 123, Jakarta Selatan, Indonesia</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-phone-alt text-amber-200 mt-1 mr-3 text-xl"></i>
+                            <div>
+                                <h4 class="font-bold">Telepon</h4>
+                                <p>(021) 1234-5678</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-envelope text-amber-200 mt-1 mr-3 text-xl"></i>
+                            <div>
+                                <h4 class="font-bold">Email</h4>
+                                <p>info@deliciousbakery.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fab fa-whatsapp text-amber-200 mt-1 mr-3 text-xl"></i>
+                            <div>
+                                <h4 class="font-bold">WhatsApp</h4>
+                                <p>+62 852-3653-6101</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-2xl font-bold mt-8 mb-4">Jam Operasional</h3>
+                    <div class="space-y-2">
+                        <div class="flex justify-between">
+                            <span>Senin - Jumat</span>
+                            <span>07:00 - 20:00</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Sabtu - Minggu</span>
+                            <span>08:00 - 21:00</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h3 class="text-2xl font-bold mb-4">Ikuti Kami</h3>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-white hover:text-amber-200 text-2xl"><i class="fab fa-facebook"></i></a>
+                            <a href="#" class="text-white hover:text-amber-200 text-2xl"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="text-white hover:text-amber-200 text-2xl"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-bold mb-4">Cabang Kami</h3>
+                     <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-amber-200 mt-1 mr-3 text-xl"></i>
+                            <div>
+                                <h4 class="font-bold">Bojonegoro</h4>
+                                <p>Jl. Roti Enak No. 123, Jakarta Selatan, Indonesia</p>
+                            </div>
+                        </div>
+                         <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-amber-200 mt-1 mr-3 text-xl"></i>
+                            <div>
+                                <h4 class="font-bold">Bojonegoro</h4>
+                                <p>Jl. Roti Enak No. 123, Jakarta Selatan, Indonesia</p>
+                            </div>
+                        </div>
+                         <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-amber-200 mt-1 mr-3 text-xl"></i>
+                            <div>
+                                <h4 class="font-bold">Nganjuk</h4>
+                                <p>Jl. Roti Enak No. 123, Jakarta Selatan, Indonesia</p>
+                            </div>
+                        </div>
+                         <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-amber-200 mt-1 mr-3 text-xl"></i>
+                            <div>
+                                <h4 class="font-bold">Nganjuk</h4>
+                                <p>Jl. Roti Enak No. 123, Jakarta Selatan, Indonesia</p>
+                            </div>
+                        </div>
+                    
+                    <div class="mt-8 bg-amber-900 p-4 rounded-lg">
+                        <h4 class="text-xl font-bold mb-2">Pesan Cepat via WhatsApp</h4>
+                        <p class="mb-4">Untuk pemesanan cepat, langsung hubungi kami via WhatsApp:</p>
+                        <a href="https://wa.me/6285236536101?text=Halo%20Delicious%20Bakery,%20saya%20ingin%20memesan%20roti" 
+                           class="inline-flex items-center bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full transition duration-300">
+                            <i class="fab fa-whatsapp mr-2 text-xl"></i> Chat Sekarang
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-amber-900 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-bread-slice text-2xl"></i>
+                        <h2 class="text-2xl font-bold">Delicious Bakery</h2>
+                    </div>
+                    <p class="mt-2">Roti Segar, Nikmat, dan Sehat untuk Keluarga Anda</p>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="#" class="hover:text-amber-200 transition">Kebijakan Privasi</a>
+                    <a href="#" class="hover:text-amber-200 transition">Syarat & Ketentuan</a>
+                    <a href="#" class="hover:text-amber-200 transition">FAQ</a>
+                </div>
+            </div>
+            
+            <div class="border-t border-amber-800 mt-8 pt-8 text-center text-sm">
+                <p>&copy; 2023 Delicious Bakery. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Order Modal -->
+    <div id="order-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg max-w-md w-full p-6 animate-fade-in">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xl font-bold text-amber-800">Pesan <span id="modal-product-name"></span></h3>
+                <button id="close-modal" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <form id="order-form">
+                <div class="mb-4">
+                    <label for="customer-name" class="block mb-1">Nama Lengkap</label>
+                    <input type="text" id="customer-name" required class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-amber-200">
+                </div>
+                
+                <div class="mb-4">
+                    <label for="customer-phone" class="block mb-1">Nomor WhatsApp</label>
+                    <input type="tel" id="customer-phone" required class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-amber-200">
+                </div>
+                
+                <div class="mb-4">
+                    <label for="quantity" class="block mb-1">Jumlah</label>
+                    <input type="number" id="quantity" min="1" value="1" class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-amber-200">
+                </div>
+                
+                <div class="mb-4">
+                    <label for="notes" class="block mb-1">Catatan (Opsional)</label>
+                    <textarea id="notes" rows="3" class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-amber-200"></textarea>
+                </div>
+                
+                <div class="flex justify-between items-center mb-4">
+                    <span class="font-bold">Total:</span>
+                    <span id="total-price" class="text-xl font-bold text-amber-700"></span>
+                </div>
+                
+                <button type="submit" class="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-6 rounded-full transition duration-300">
+                    Lanjutkan ke WhatsApp
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+        
+        // Menu Filter
+        const categoryButtons = document.querySelectorAll('.category-btn');
+        const menuItems = document.querySelectorAll('.menu-item');
+        
+        categoryButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Update active button
+                categoryButtons.forEach(btn => {
+                    btn.classList.remove('bg-amber-600', 'text-white');
+                    btn.classList.add('bg-white', 'text-amber-800');
+                });
+                
+                button.classList.add('bg-amber-600', 'text-white');
+                button.classList.remove('bg-white', 'text-amber-800');
+                
+                // Filter items
+                const category = button.dataset.category;
+                
+                menuItems.forEach(item => {
+                    if (category === 'all' || item.dataset.category === category) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // Order Modal
+        const orderButtons = document.querySelectorAll('.order-btn');
+        const orderModal = document.getElementById('order-modal');
+        const closeModal = document.getElementById('close-modal');
+        const productNameElement = document.getElementById('modal-product-name');
+        const totalPriceElement = document.getElementById('total-price');
+        const quantityInput = document.getElementById('quantity');
+        const orderForm = document.getElementById('order-form');
+        
+        orderButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const productName = button.dataset.name;
+                const productPrice = parseInt(button.dataset.price);
+                
+                productNameElement.textContent = productName;
+                totalPriceElement.textContent = `Rp ${productPrice.toLocaleString('id-ID')}`;
+                
+                // Update total price when quantity changes
+                quantityInput.addEventListener('input', () => {
+                    const quantity = parseInt(quantityInput.value) || 1;
+                    const total = quantity * productPrice;
+                    totalPriceElement.textContent = `Rp ${total.toLocaleString('id-ID')}`;
+                });
+                
+                orderModal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+        
+        closeModal.addEventListener('click', () => {
+            orderModal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        });
+        
+        // Handle form submission
+        orderForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const productName = productNameElement.textContent;
+            const customerName = document.getElementById('customer-name').value;
+            const customerPhone = document.getElementById('customer-phone').value;
+            const quantity = document.getElementById('quantity').value || 1;
+            const notes = document.getElementById('notes').value;
+            
+            // Format WhatsApp message
+            const message = `Halo Delicious Bakery, saya ingin memesan:
+            
+Produk: ${productName}
+Nama: ${customerName}
+Jumlah: ${quantity}
+Catatan: ${notes || '-'}
+
+Total: ${totalPriceElement.textContent}
+
+Silakan konfirmasi ketersediaan dan cara pembayarannya. Terima kasih!`;
+            
+            // Encode message for URL
+            const encodedMessage = encodeURIComponent(message);
+            
+            // Open WhatsApp
+            window.open(`https://wa.me/6285236536101?text=${encodedMessage}`, '_blank');
+            
+            // Close modal
+            orderModal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+            
+            // Reset form
+            orderForm.reset();
+        });
+        
+        // Close modal when clicking outside
+        orderModal.addEventListener('click', (e) => {
+            if (e.target === orderModal) {
+                orderModal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+        });
+    </script>
+</body>
+</html>
